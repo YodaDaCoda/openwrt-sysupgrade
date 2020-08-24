@@ -103,8 +103,8 @@ doSysupgrade() {
   log ${SYSUPGRADE_HASHES_URL}
 
   cd /tmp
-  curl "${SYSUPGRADE_URL}" --output "${SYSUPGRADE_FILENAME}"
-  curl "${SYSUPGRADE_HASHES_URL}" --output "hashes.txt"
+  curl -L "${SYSUPGRADE_URL}" --output "${SYSUPGRADE_FILENAME}"
+  curl -L "${SYSUPGRADE_HASHES_URL}" --output "hashes.txt"
 
   logger "Retrieved update file and hashes"
 
